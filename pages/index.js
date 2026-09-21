@@ -1,3 +1,4 @@
+import Prato from "@/components/Prato";
 
 const pratos = [
   {
@@ -16,3 +17,20 @@ const pratos = [
     preco: 19.90,
   },
 ];
+
+export default function Home() {
+  return (
+    <main>
+        <h1>Cardápio</h1>
+
+        {pratos.map((prato) => (
+          <Prato
+            key={prato.nome}
+            nome={prato.nome}
+            descricao={prato.descricao}
+            preco={prato.preco}
+          />
+        ))}
+    </main>
+  );
+}
